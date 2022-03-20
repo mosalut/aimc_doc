@@ -143,7 +143,10 @@ CryptoMachine.machineOfPoolByIndex(address \_poolMinter, uint index) view public
 ```
 参数
 	\_poolMinter: 矿池地址
+<<<<<<< HEAD
 返回
+=======
+>>>>>>> 0d282d6... Add ABI functions
 	index: 索引
 ```
 
@@ -159,8 +162,11 @@ CryptoMachine.getPool() view public returns(uint16)
 CryptoMachine.getPoolFrom(address \_poolMinter) view public returns(uint16)
 > 如题
 ```
+<<<<<<< HEAD
 参数
 	_poolMinter: 矿池地址
+=======
+>>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 数量
 ```
@@ -182,7 +188,11 @@ CryptoMachine.getPoolBalanceFrom(address \_poolMinter) view public returns(uint)
 > 见 可获取矿池余额
 ```
 参数
+<<<<<<< HEAD
 	_poolMinter: 矿池地址
+=======
+	\_poolMinter: 矿池地址
+>>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 可提现余额
 ```
@@ -200,7 +210,11 @@ CryptoMachine.getPoolEfficienciesFrom(address \_poolMinter) view public returns(
 > 如题
 ```
 参数
+<<<<<<< HEAD
 	_poolMinter: 矿池地址
+=======
+	\_poolMinter: 矿池地址
+>>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 效力
 ```
@@ -210,7 +224,11 @@ CryptoMachine.whichPool(uint \_tokenId) view public returns(address)
 > 返回机器人所在矿池地址
 ```
 参数
+<<<<<<< HEAD
 	_tokenId
+=======
+	\_tokenId
+>>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 矿池地址
 ```
