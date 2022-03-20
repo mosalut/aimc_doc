@@ -59,7 +59,7 @@ CryptoMachine.mint(uint16 \_efficiency) public onlyOwner
 > 效力在 [0, 65536) 区间范围内
 ```
 参数
-	\_efficiency: 效力
+	_efficiency: 效力
 ```
 
 #### 获取机器人（机器人效力）
@@ -68,7 +68,7 @@ CryptoMachine.getMachine(uint \_tokenId) view public returns(uint)
 > 目前机器人的信息只有效力
 ```
 参数
-	\_tokenId: 机器人唯一标识
+	_tokenId: 机器人唯一标识
 
 返回
 	0: 机器人效力
@@ -118,8 +118,8 @@ CryptoMachine.joinPool(address \_poolMinter, uint \_tokenId) public
 > 必须保证该机器人不再任何矿池
 ```
 参数
-	\_poolMinter: 矿池所有者地址
-	\_tokenId: 机器人唯一标识
+	_poolMinter: 矿池所有者地址
+	_tokenId: 机器人唯一标识
 ```
 
 #### 机器人退出矿池
@@ -131,7 +131,7 @@ CryptoMachine.quitPool(uint \_tokenId) public
 > 必须保证机器人已经在一个矿池中
 ```
 参数
-	\_tokenId: 机器人唯一标识
+	_tokenId: 机器人唯一标识
 ```
 
 #### 按索引获取矿池中机器人
@@ -142,7 +142,7 @@ CryptoMachine.machineOfPoolByIndex(address \_poolMinter, uint index) view public
 > 当循环调用出现索引超出范围的时，可认为循环到了末尾
 ```
 参数
-	\_poolMinter: 矿池地址
+	_poolMinter: 矿池地址
 返回
 	index: 索引
 ```
