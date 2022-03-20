@@ -59,7 +59,7 @@ CryptoMachine.mint(uint16 \_efficiency) public onlyOwner
 > 效力在 [0, 65536) 区间范围内
 ```
 参数
-	\_efficiency: 效力
+	_efficiency: 效力
 ```
 
 #### 获取机器人（机器人效力）
@@ -68,7 +68,7 @@ CryptoMachine.getMachine(uint \_tokenId) view public returns(uint)
 > 目前机器人的信息只有效力
 ```
 参数
-	\_tokenId: 机器人唯一标识
+	_tokenId: 机器人唯一标识
 
 返回
 	0: 机器人效力
@@ -118,8 +118,8 @@ CryptoMachine.joinPool(address \_poolMinter, uint \_tokenId) public
 > 必须保证该机器人不再任何矿池
 ```
 参数
-	\_poolMinter: 矿池所有者地址
-	\_tokenId: 机器人唯一标识
+	_poolMinter: 矿池所有者地址
+	_tokenId: 机器人唯一标识
 ```
 
 #### 机器人退出矿池
@@ -131,7 +131,7 @@ CryptoMachine.quitPool(uint \_tokenId) public
 > 必须保证机器人已经在一个矿池中
 ```
 参数
-	\_tokenId: 机器人唯一标识
+	_tokenId: 机器人唯一标识
 ```
 
 #### 按索引获取矿池中机器人
@@ -142,11 +142,8 @@ CryptoMachine.machineOfPoolByIndex(address \_poolMinter, uint index) view public
 > 当循环调用出现索引超出范围的时，可认为循环到了末尾
 ```
 参数
-	\_poolMinter: 矿池地址
-<<<<<<< HEAD
+	_poolMinter: 矿池地址
 返回
-=======
->>>>>>> 0d282d6... Add ABI functions
 	index: 索引
 ```
 
@@ -162,11 +159,9 @@ CryptoMachine.getPool() view public returns(uint16)
 CryptoMachine.getPoolFrom(address \_poolMinter) view public returns(uint16)
 > 如题
 ```
-<<<<<<< HEAD
 参数
 	_poolMinter: 矿池地址
 =======
->>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 数量
 ```
@@ -188,11 +183,7 @@ CryptoMachine.getPoolBalanceFrom(address \_poolMinter) view public returns(uint)
 > 见 可获取矿池余额
 ```
 参数
-<<<<<<< HEAD
 	_poolMinter: 矿池地址
-=======
-	\_poolMinter: 矿池地址
->>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 可提现余额
 ```
@@ -210,11 +201,7 @@ CryptoMachine.getPoolEfficienciesFrom(address \_poolMinter) view public returns(
 > 如题
 ```
 参数
-<<<<<<< HEAD
 	_poolMinter: 矿池地址
-=======
-	\_poolMinter: 矿池地址
->>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 效力
 ```
@@ -224,11 +211,7 @@ CryptoMachine.whichPool(uint \_tokenId) view public returns(address)
 > 返回机器人所在矿池地址
 ```
 参数
-<<<<<<< HEAD
 	_tokenId
-=======
-	\_tokenId
->>>>>>> 0d282d6... Add ABI functions
 返回
 	0: 矿池地址
 ```
