@@ -54,8 +54,8 @@ Main.getVersion() view public returns(uint64)
 ## 用户调用
 #### 铸造机器人
 CryptoMachine.mint(uint16 \_efficiency) public onlyOwner
-> 铸造一个效力为 _\_efficiency_ 的机器人
-> 并且授权新机器人的转账权给 _Main_ 合约地址
+> 铸造一个效力为 _\_efficiency_ 的机器人<br />
+> 并且授权新机器人的转账权给 _Main_ 合约地址<br />
 > 效力在 [0, 65536) 区间范围内
 ```
 参数
@@ -64,7 +64,7 @@ CryptoMachine.mint(uint16 \_efficiency) public onlyOwner
 
 #### 获取机器人（机器人效力）
 CryptoMachine.getMachine(uint \_tokenId) view public returns(uint)
-> 通过 \_tokenId 获取机器人信息
+> 通过 \_tokenId 获取机器人信息<br />
 > 目前机器人的信息只有效力
 ```
 参数
@@ -76,12 +76,12 @@ CryptoMachine.getMachine(uint \_tokenId) view public returns(uint)
 
 #### 购买机器人
 Main.buy(uint \_tokenId) public
-> 购买唯一标识为 _\_tokenId_ 的机器人
-> 必须保证标识符在 _Main_ 合约所有者地址下 
-> 必须保证调用者地址中有足够的 AITN 币
-> 价格为每机器人效力 1050 个 AITN 币
-> 购买成功后该标识符将关联到调用者地址
-> 并且对应机器人的所有者被更新为调用者地址
+> 购买唯一标识为 _\_tokenId_ 的机器人<br />
+> 必须保证标识符在 _Main_ 合约所有者地址下<br /> 
+> 必须保证调用者地址中有足够的 AITN 币<br />
+> 价格为每机器人效力 1050 个 AITN 币<br />
+> 购买成功后该标识符将关联到调用者地址<br />
+> 并且对应机器人的所有者被更新为调用者地址<br />
 > 并且调用者将转到 _Main_ 合约所有者地址中相应价格的 AITN 币
 ```
 参数
@@ -90,31 +90,31 @@ Main.buy(uint \_tokenId) public
 
 #### 创建矿池
 CryptoMachine.mintPool() public
-> 用调用者自己的地址创建一个矿池
-> 每个调用者只能同时拥有一个矿池
-> 成功后新矿池属于调用者
-> 全局矿池总数量 +1
+> 用调用者自己的地址创建一个矿池<br />
+> 每个调用者只能同时拥有一个矿池<br />
+> 成功后新矿池属于调用者<br />
+> 全局矿池总数量 +1<br />
 > 必须保证创建者本来没有矿池
 
 #### 销毁矿池
 CryptoMachine.destoryPool() public
-> 调用者销毁自己的矿池
-> 成功后调用者将不再拥有任何矿池
-> 全局矿池总数量 -1
-> 必须保证用户已经有矿池
-> 必须保证矿池下已经没有机器人
+> 调用者销毁自己的矿池<br />
+> 成功后调用者将不再拥有任何矿池<br />
+> 全局矿池总数量 -1<br />
+> 必须保证用户已经有矿池<br />
+> 必须保证矿池下已经没有机器人<br />
 > 必须保证矿池下最后一次计算的余额都被提现
 
 #### 机器人加入矿池
 CryptoMachine.joinPool(address \_poolMinter, uint \_tokenId) public
-> 更新当前矿池奖励
-> 更新矿池结算时间为当前时间
-> 将唯一标识为 _\_tokenId_ 的机器人加入到地址为 _\_poolMinter_ 的矿池
-> 机器人加入矿池后开始产生效益
-> 矿池效力上升，上升值为机器人的效力
-> 全局效力上升，上升值为机器人的效力
-> 必须保证矿池存在
-> 必须保证机器人所有者为调用者地址
+> 更新当前矿池奖励<br />
+> 更新矿池结算时间为当前时间<br />
+> 将唯一标识为 _\_tokenId_ 的机器人加入到地址为 _\_poolMinter_ 的矿池<br />
+> 机器人加入矿池后开始产生效益<br />
+> 矿池效力上升，上升值为机器人的效力<br />
+> 全局效力上升，上升值为机器人的效力<br />
+> 必须保证矿池存在<br />
+> 必须保证机器人所有者为调用者地址<br />
 > 必须保证该机器人不再任何矿池
 ```
 参数
@@ -124,10 +124,10 @@ CryptoMachine.joinPool(address \_poolMinter, uint \_tokenId) public
 
 #### 机器人退出矿池
 CryptoMachine.quitPool(uint \_tokenId) public
-> 将 _\_tokenId_ 机器人移出所在矿池
-> 矿池效力下降，下降值为机器人的效力
-> 全局效力下降，下降值为机器人的效力
-> 必须保证机器人所有者地址是调用者地址
+> 将 _\_tokenId_ 机器人移出所在矿池<br />
+> 矿池效力下降，下降值为机器人的效力<br />
+> 全局效力下降，下降值为机器人的效力<br />
+> 必须保证机器人所有者地址是调用者地址<br />
 > 必须保证机器人已经在一个矿池中
 ```
 参数
@@ -136,9 +136,9 @@ CryptoMachine.quitPool(uint \_tokenId) public
 
 #### 按索引获取矿池中机器人
 CryptoMachine.machineOfPoolByIndex(address \_poolMinter, uint index) view public returns(uint)
-> 按索引获取矿池中机器人，并且返回唯一标识
-> 必须保证索引值在范围内
-> 前端可以循环传索引调用来做分页
+> 按索引获取矿池中机器人，并且返回唯一标识<br />
+> 必须保证索引值在范围内<br />
+> 前端可以循环传索引调用来做分页<br />
 > 当循环调用出现索引超出范围的时，可认为循环到了末尾
 ```
 参数
@@ -168,10 +168,10 @@ CryptoMachine.getPoolFrom(address \_poolMinter) view public returns(uint16)
 
 #### 获取矿池余额
 CryptoMachine.getPoolBalance() view public returns(uint)
-> 每次获取余额时，都将计算一次余额及计算余额的条件变量
-> 但是并不会更行余额及条件变量
-> 所以用户获取余额后只是一个临时计算出来的数字，并为更新合约数据
-> 但是合约中保证在提现时，能够大于调用这个方法时的余额
+> 每次获取余额时，都将计算一次余额及计算余额的条件变量<br />
+> 但是并不会更行余额及条件变量<br />
+> 所以用户获取余额后只是一个临时计算出来的数字，并为更新合约数据<br />
+> 但是合约中保证在提现时，能够大于调用这个方法时的余额<br />
 > 并且在提现后，用户回到余额所在的页面，经过自动刷新又重新调用了此函数
 ```
 返回
@@ -218,9 +218,9 @@ CryptoMachine.whichPool(uint \_tokenId) view public returns(address)
 
 #### 提现
 Main.withDraw(uint amount) public
-> 从调用者的矿池余额中提取 _amount_ 个 AITN 币
-> 必须保证矿池所有者是调用者
-> 必须保证矿池余额大于 _amount_
+> 从调用者的矿池余额中提取 _amount_ 个 AITN 币<br />
+> 必须保证矿池所有者是调用者<br />
+> 必须保证矿池余额大于 _amount_<br />
 > 调用成功后矿池余额将减去 _amount_
 
 ## 目前缺少全局矿池数量接口
