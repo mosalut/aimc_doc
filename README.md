@@ -2,9 +2,9 @@
 AIMC 人工智能DAPP 接口文档
 本文档三个合约下的接口
 以:
--Main.function(...)
--Aitn.function(...)
--CryptoMachine.function(...)
+	Main.function(...)
+	Aitn.function(...)
+	CryptoMachine.function(...)
 表示
 
 ## 管理员操作
