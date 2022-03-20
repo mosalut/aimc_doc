@@ -11,8 +11,11 @@ AIMC 人工智能DAPP 接口文档
 #### 创建矿机
 Main.mintAitn(address account, uint amount) public onlyOwner
 > 合约所有者铸造 AITN 币
+
 > 直接创建到 _account_ 地址下
+
 > 创建 _amount_ 个 AITN
+
 > 改函数只能被 _Main_ 合约创所有者调用
 ```
 参数
