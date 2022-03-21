@@ -38,6 +38,25 @@ Main.burnAitn(address account, uint amount) public onlyOwner
 	amount: 燃烧数量
 ```
 
+<<<<<<< HEAD
+=======
+#### 设置当前全局奖励
+Main.setCurrentReward(uint \_reward) public onlyOwner
+> 当前全局奖励是每秒奖励总量<br />
+> 总量将分到所有矿池<br />
+> 但是由于只在机器加入矿池和退出矿池是计算余额<br />
+> 其他没有加入或退出的矿池的奖励实际没有被计算<br />
+> 而这时如果重新设置奖励总量<br />
+> 其他矿池再计算奖励时就会按照新的总奖励计算<br />
+> 导致与按照之前奖励计算的矿池在之前的相同时间的分奖计算<br />
+> 取了不同的总奖励，会有误差<br />
+> 另外，由于计算中多次使用了除法，尤其是加成计算，会有损失值误差
+```
+参数
+	_reward: 总奖励
+```
+
+>>>>>>> 8d6cb88... 添加遗漏的换行
 #### 更新版本号
 Main.versionImprove() public onlyOwner
 > 暂定做法，将更改
