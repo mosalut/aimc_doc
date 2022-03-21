@@ -105,6 +105,12 @@ CryptoMachine.destoryPool() public
 > 必须保证矿池下已经没有机器人<br />
 > 必须保证矿池下最后一次计算的余额都被提现
 
+#### 获取矿池地址
+CryptoMachine.getPoolByIndex(uint index) view public
+> 根据全局矿池索引获取矿池地址
+> 前端循环调用，遇到索引越界，则说明到末尾
+> 可以做分页效果
+
 #### 机器人加入矿池
 CryptoMachine.joinPool(address \_poolMinter, uint \_tokenId) public
 > 更新当前矿池奖励<br />
@@ -223,4 +229,9 @@ Main.withDraw(uint amount) public
 > 必须保证矿池余额大于 _amount_<br />
 > 调用成功后矿池余额将减去 _amount_
 
-## 目前缺少全局矿池数量接口
+## 已知bug
+	1.挖矿加了加成公式后，在多矿池，或多机器的情况下，或多矿池多机器情况下，
+	误差太大，应该是公式步骤中小数被忽略造成的。<br />
+
+	2.尝试改成USDT购买机器，但在测试中，没有 chai 调用已部署在testnet的合约的方式。
+	暂时改回Aitn购买机器。
